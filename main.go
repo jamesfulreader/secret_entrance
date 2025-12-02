@@ -10,7 +10,7 @@ import (
 func main() {
 	fmt.Println("Secret entrance AOC 2025")
 
-	combination := utils.ParseInput("test.txt")
+	combination := utils.ParseInput("input.txt")
 
 	count := simulation.SimulateDial(50, combination)
 	fmt.Println(count)

@@ -7,21 +7,24 @@ func SimulateDial(start int, instructions []utils.Instruction) int {
 	zeroCount := 0
 
 	for _, inst := range instructions {
-		if inst.Directon == "L" {
-			pos -= inst.Clicks
-		} else {
-			pos += inst.Clicks
-		}
+		for i := 0; i < inst.Clicks; i++ {
+			if inst.Directon == "L" {
+				pos--
+			} else {
+				pos++
+			}
 
-		for pos < 0 {
-			pos += 100
-		}
-		for pos > 99 {
-			pos -= 100
-		}
+			if pos < 0 {
+				pos += 100
 
-		if pos == 0 {
-			zeroCount++
+			}
+			if pos > 99 {
+				pos -= 100
+			}
+
+			if pos == 0 {
+				zeroCount++
+			}
 		}
 	}
 
