@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/jamesfulreader/secret_entrance/simulation"
 	"github.com/jamesfulreader/secret_entrance/utils"
 )
 
@@ -11,8 +12,6 @@ func main() {
 
 	combination := utils.ParseInput("test.txt")
 
-	for _, v := range combination {
-		fmt.Printf("From our combination turn %s %d clicks\n", v.Directon, v.Clicks)
-	}
-
+	count := simulation.SimulateDial(50, combination)
+	fmt.Println(count)
 }
